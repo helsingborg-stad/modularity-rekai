@@ -12,6 +12,12 @@
         @endif
 
         <div class="rek-ai-linklist u-margin__top--2">
+            
+        </div>
+
+        @if($rekaiEnableAiSuggest)
+            <div class="rek-prediction" data-userootpath="false" data-nrofhits="{{ $rekaiNumberOfRecommendation }}"></div>
+        @else
             @if($rekaiLinkList)
                 @foreach($rekaiLinkList as $rekaiLink)
                     @button([
@@ -29,11 +35,41 @@
                     @endbutton
                 @endforeach
             @else
-                <!-- Rek AI: No static Links-->
+                @notice([
+                    'type' => 'info',
+                    'message' => [
+                        'text' => $lang->noData,
+                    ],
+                    'icon' => [
+                        'name' => 'report',
+                        'size' => 'md',
+                        'color' => 'white'
+                    ]
+                ])
+                @endnotice
             @endif
-        </div>
-
-        <div class="rek-prediction"></div>
+        @endif
 
     </div>
 @endpaper
+
+
+<div class="output">OUTPUR</div>
+
+<script>
+    window.addEventListener("load", function(){
+        function renderHtml(data) {
+            var s = '';
+            for(var i = 0; i < data.predictions.length; i++) {
+                s += '<?php echo modularity_recommend_render_blade_view("partials.button", ["href"=> "' + data.predictions[i].url + '", "text" => "' + data.predictions[i].title + '"]); ?>';
+            }
+            $('.output').html(s);
+        }
+
+        window.__rekai.predict({
+            overwrite: {
+                addcontent: true
+            }
+        }, renderHtml);
+    });
+</script>

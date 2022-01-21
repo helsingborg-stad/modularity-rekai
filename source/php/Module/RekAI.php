@@ -35,6 +35,7 @@ class RekAI extends \Modularity\Module
 
         //Translations
         $data['lang'] = (object) array(
+            'noData' => __("No static links provided to recommendation module. AI suggestion is off.", 'modularity-rekai')
         );
 
         //Get permalink, reformat to object
