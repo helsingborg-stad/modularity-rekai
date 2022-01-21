@@ -22,24 +22,40 @@ class App
         add_action('wp_enqueue_scripts', array($this, 'registerRekAIScript'));
 
         //Add warning
-        add_action('admin_head', function () {
-            if (empty(get_option('rekai_script_url'))) {
-                echo '
-                    <script>
-                        console.log("RekAI script url is not defined. Please fill it out in the settings tab or disable this plugin.");
-                    </script>
-                ';
-            }
-        });
+        add_action('admin_head', array($this, 'addUndefinedWarning'));
+
+        //Head
+        add_action('wp_head', array($this, 'printMetaTag'));
+    }
+
+    /**
+     * Console log undefined warning
+     * @return void
+     */
+    public function addUndefinedWarning() {
+        if (empty(get_field('rekai_script_url', 'option'))) {
+            echo '
+                <script>
+                    console.log("RekAI script url is not defined. Please fill it out in the settings tab or disable this plugin.");
+                </script>
+            ';
+        }
+    }
+
+    /**
+     * Public meta tag. Enables indexing.
+     */
+    public function printMetaTag()
+    {
+        echo '<meta name="rek_viewclick" />' . "\n";
     }
 
     /**
      * Enqueue script
      */
-
     public function registerRekAIScript()
     {
-        $scriptUrl = get_option('rekai_script_url');
+        $scriptUrl = get_field('rekai_script_url', 'option');
 
         if ($scriptUrl) {
             wp_register_script(
