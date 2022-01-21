@@ -1,0 +1,23 @@
+[{
+    "key": "group_61eaa5feb2601",
+    "title": "RekAI Settings",
+    "fields": [],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+}]
+

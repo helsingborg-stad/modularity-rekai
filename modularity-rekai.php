@@ -42,6 +42,7 @@ $acfExportManager->setTextdomain('modularity-rekai');
 $acfExportManager->setExportFolder(MODULARITYREKAI_PATH . 'source/php/AcfFields/');
 $acfExportManager->autoExport(array(
     'recommended' => 'group_61ea7a87e8e9f',
+    'settings' => 'group_61eaa5feb2601',
 ));
 $acfExportManager->import();
 
