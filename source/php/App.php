@@ -8,11 +8,39 @@ class App
 {
     public function __construct()
     {
+
+        //Init subset
+        new Admin\Settings();
+
         //Register module
         add_action('plugins_loaded', array($this, 'registerModule'));
 
         // Add view paths
         add_filter('Municipio/blade/view_paths', array($this, 'addViewPaths'), 1, 1);
+
+        //Add global rek ai script
+        add_action('enqueue_scripts', array($this, 'registerRekAIScript'));
+    }
+
+    /**
+     * Enqueue script
+     */
+
+    public function registerRekAIScript()
+    {
+
+        die("registerRekAIScript");
+
+        //Register custom css
+        wp_register_script(
+            'modularity-rekai-stats',
+            'https://static.rekai.se/17b5ee70.js',
+            null,
+            '1.0.0'
+        );
+
+        //Enqueue
+        wp_enqueue_script('modularity-rekai-stats');
     }
 
     /**

@@ -37,6 +37,16 @@ class RekAI extends \Modularity\Module
         $data['lang'] = (object) array(
         );
 
+        //Get permalink, reformat to object
+        if (!empty($data['rekaiLinkList'])) {
+            $data['rekaiLinkList'] = array_map(function ($item) {
+                if (is_integer($item['rekaiTarget'])) {
+                    $item['rekaiTarget'] = get_permalink($item['rekaiTarget']);
+                }
+                return (object) $item;
+            }, $data['rekaiLinkList']);
+        }
+
         return $data;
     }
 
