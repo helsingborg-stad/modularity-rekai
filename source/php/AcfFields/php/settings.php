@@ -5,13 +5,29 @@
     'key' => 'group_61eaa5feb2601',
     'title' => __('RekAI Settings', 'modularity-rekai'),
     'fields' => array(
+        0 => array(
+            'key' => 'field_61eaa6920e638',
+            'label' => __('Script url', 'modularity-rekai'),
+            'name' => 'rekai_script_url',
+            'type' => 'url',
+            'instructions' => __('Add your RekAI Script url here, eg: https://static.rekai.se/[nnnn].js', 'modularity-rekai'),
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+        ),
     ),
     'location' => array(
         0 => array(
             0 => array(
-                'param' => 'post_type',
+                'param' => 'options_page',
                 'operator' => '==',
-                'value' => 'post',
+                'value' => 'modularity-rekai-settings',
             ),
         ),
     ),

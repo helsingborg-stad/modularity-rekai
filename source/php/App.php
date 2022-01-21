@@ -19,7 +19,18 @@ class App
         add_filter('Municipio/blade/view_paths', array($this, 'addViewPaths'), 1, 1);
 
         //Add global rek ai script
-        add_action('enqueue_scripts', array($this, 'registerRekAIScript'));
+        add_action('wp_enqueue_scripts', array($this, 'registerRekAIScript'));
+
+        //Add warning
+        add_action('admin_head', function () {
+            if (empty(get_option('rekai_script_url'))) {
+                echo '
+                    <script>
+                        console.log("RekAI script url is not defined. Please fill it out in the settings tab or disable this plugin.");
+                    </script>
+                ';
+            }
+        });
     }
 
     /**
@@ -28,19 +39,17 @@ class App
 
     public function registerRekAIScript()
     {
+        $scriptUrl = get_option('rekai_script_url');
 
-        die("registerRekAIScript");
-
-        //Register custom css
-        wp_register_script(
-            'modularity-rekai-stats',
-            'https://static.rekai.se/17b5ee70.js',
-            null,
-            '1.0.0'
-        );
-
-        //Enqueue
-        wp_enqueue_script('modularity-rekai-stats');
+        if ($scriptUrl) {
+            wp_register_script(
+                'modularity-rekai-stats',
+                $scriptUrl,
+                null,
+                '1.0.0'
+            );
+            wp_enqueue_script('modularity-rekai-stats');
+        }
     }
 
     /**
