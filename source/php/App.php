@@ -24,7 +24,7 @@ class App
         if (function_exists('modularity_register_module')) {
             modularity_register_module(
                 MODULARITYREKAI_MODULE_PATH,
-                'Entryscape'
+                'RekAI'
             );
         }
     }
