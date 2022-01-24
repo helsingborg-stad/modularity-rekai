@@ -1,6 +1,7 @@
 @if (!$hideTitle)
     @typography([
         'element' => "h2",
+        'classList' => ['u-margin--0']
     ])
         {{ $postTitle }}
     @endtypography
@@ -51,7 +52,7 @@
                     }
                 }
             }
-            
+
             window.__rekai.predict({
                 overwrite: {
                     addcontent: true,
