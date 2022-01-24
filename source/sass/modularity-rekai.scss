@@ -1,0 +1,14 @@
+.mod-recommend__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+
+  .c-button {
+    border-radius: 20px;
+  }
+
+  .c-button + .c-button {
+    margin-left: 0;
+  }
+}

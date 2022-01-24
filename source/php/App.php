@@ -33,10 +33,10 @@ class App
      * @return void
      */
     public function addUndefinedWarning() {
-        if (empty(get_field('rekai_script_url', 'option'))) {
+        if (get_field('rekai_enable', 'options') && empty(get_field('rekai_script_url', 'option'))) {
             echo '
                 <script>
-                    console.log("RekAI script url is not defined. Please fill it out in the settings tab or disable this plugin.");
+                    console.log("RekAI script url is not defined. Please fill it out in the settings tab or disable rekai recommendations.");
                 </script>
             ';
         }

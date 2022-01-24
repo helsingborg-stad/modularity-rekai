@@ -48,6 +48,12 @@ class RekAI extends \Modularity\Module
             }, $data['rekaiLinkList']);
         }
 
+        //Enable RekAI
+        $data['enableRekAI'] = get_field('rekai_enable', 'options');
+
+        //Add uid
+        $data['rekaiUid'] = "prediction-mount-" . md5(rand());
+
         return $data;
     }
 
