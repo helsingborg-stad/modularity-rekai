@@ -27,7 +27,7 @@
             "name": "rekai_script_url",
             "type": "url",
             "instructions": "Add your RekAI Script url here, eg: https:\/\/static.rekai.se\/[nnnn].js",
-            "required": 0,
+            "required": 1,
             "conditional_logic": [
                 [
                     {
@@ -64,4 +64,4 @@
     "active": true,
     "description": ""
 }]
-
+

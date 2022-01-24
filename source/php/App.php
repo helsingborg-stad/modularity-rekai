@@ -26,6 +26,16 @@ class App
 
         //Head
         add_action('wp_head', array($this, 'printMetaTag'));
+
+        //Remove rek ai field, if not enabled
+        add_filter("acf/prepare_field/name=rekai_number_of_recommendation", array($this, 'hideRekAIField'));
+    }
+
+    public function hideRekAIField($field) {
+        if (get_field('rekai_enable', 'options') == false) {
+            return false;
+        }
+        return $field;
     }
 
     /**

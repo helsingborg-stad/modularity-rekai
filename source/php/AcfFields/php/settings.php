@@ -1,9 +1,7 @@
 <?php 
 
-
-if (function_exists('acf_add_local_field_group')) {
-
-    acf_add_local_field_group(array(
+if (function_exists('acf_add_local_field_group')) {
+    acf_add_local_field_group(array(
     'key' => 'group_61eaa5feb2601',
     'title' => __('RekAI Settings', 'modularity-recommend'),
     'fields' => array(
@@ -32,7 +30,7 @@ if (function_exists('acf_add_local_field_group')) {
             'name' => 'rekai_script_url',
             'type' => 'url',
             'instructions' => __('Add your RekAI Script url here, eg: https://static.rekai.se/[nnnn].js', 'modularity-recommend'),
-            'required' => 0,
+            'required' => 1,
             'conditional_logic' => array(
                 0 => array(
                     0 => array(
@@ -69,5 +67,4 @@ if (function_exists('acf_add_local_field_group')) {
     'active' => true,
     'description' => '',
 ));
-
-}
+}
