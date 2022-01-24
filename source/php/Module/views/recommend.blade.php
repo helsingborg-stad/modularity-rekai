@@ -51,10 +51,11 @@
                     }
                 }
             }
+            
             window.__rekai.predict({
                 overwrite: {
                     addcontent: true,
-                    userootpath: false,
+                    userootpath: true,
                     nrofhits: {{$rekaiNumberOfRecommendation}},
                 }
             }, renderHtml);
