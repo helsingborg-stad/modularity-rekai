@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Modularity Recommend\n"
-"POT-Creation-Date: 2022-01-24 11:36+0100\n"
-"PO-Revision-Date: 2022-01-24 11:40+0100\n"
+"POT-Creation-Date: 2022-01-24 16:41+0100\n"
+"PO-Revision-Date: 2022-01-24 16:41+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -54,8 +54,8 @@ msgstr "Länkmål"
 msgid "Max number of autosuggested recommendations"
 msgstr "Maximalt antal föreslagna länkar"
 
-#: source/php/AcfFields/php/recommended.php:106
-#: source/php/AcfFields/php/recommended.php:108
+#: source/php/AcfFields/php/recommended.php:99
+#: source/php/AcfFields/php/recommended.php:101
 msgid "items"
 msgstr "antal"
 
