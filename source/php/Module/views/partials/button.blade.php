@@ -7,7 +7,8 @@
     'context' => ['module.recommend', 'module.recommend.button'],
     'classList' => [
         'recommend-linklist__item', 
-        'recommend-linklist__' . $type . '-item'
+        'recommend-linklist__' . $type . '-item',
+        'c-button--pill'
     ],
 ])
 @endbutton
