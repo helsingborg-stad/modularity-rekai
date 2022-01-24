@@ -39,7 +39,7 @@
             window.__rekai.predict({
                 overwrite: {
                     addcontent: true,
-                    userootpath: false, //Change to true in prod
+                    userootpath: true,
                     nrofhits: {{$rekaiNumberOfRecommendation}},
                 }
             }, renderHtml);
