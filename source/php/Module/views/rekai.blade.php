@@ -6,22 +6,24 @@
     @endtypography
 @endif
 
-@if($rekaiEnableAiSuggest)
-    <div id="{{$rekaiUid}}" class="mod-recommend__items">
-        @foreach($rekaiLinkList as $rekaiLink)
-            @include('partials.button', [
-                "text" => $rekaiLink->rekaiLinkLabel,
-                "href" => $rekaiLink->rekaiTarget,
-                "type" => "static",
-            ])
-        @endforeach
+@if($enableRekAI)
+    <div id="{{$recommendUid}}" class="mod-recommend__items">
+        @if($recommendLinkList) 
+            @foreach($recommendLinkList as $recommendLink)
+                @include('partials.button', [
+                    "text" => $recommendLink->recommendLinkLabel,
+                    "href" => $recommendLink->recommendTarget,
+                    "type" => "static",
+                ])
+            @endforeach
+        @endif
     </div>
     <script>
         window.addEventListener("load", function(){
             function renderHtml(data) {
                 
                 let s = '';
-                let targetId = document.getElementById("{{$rekaiUid}}");
+                let targetId = document.getElementById("{{$recommendUid}}");
                 
                 if(targetId) {
                     for(var i = 0; i < data.predictions.length; i++) {
@@ -44,11 +46,11 @@
         });
     </script>
 @else
-    @if($rekaiLinkList)
-        @foreach($rekaiLinkList as $rekaiLink)
+    @if($recommendLinkList) 
+        @foreach($recommendLinkList as $recommendLink)
             @include('partials.button', [
-                "text" => $rekaiLink->rekaiLinkLabel,
-                "href" => $rekaiLink->rekaiTarget,
+                "text" => $recommendLink->recommendLinkLabel,
+                "href" => $recommendLink->recommendTarget,
                 "type" => "static",
             ])
         @endforeach

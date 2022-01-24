@@ -1,5 +1,5 @@
 {
-    "name": "helsingborg-stad/modularity-rekai",
+    "name": "helsingborg-stad/modularity-recommend",
     "description": "Modularity RekAI",
     "type": "wordpress-plugin",
     "license": "MIT",
@@ -14,7 +14,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/modularity-rekai.git"
+            "url": "https://github.com/helsingborg-stad/modularity-recommend.git"
         }
     ]
 }

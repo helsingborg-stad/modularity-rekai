@@ -1,1 +1,1 @@
-var ModularityRekAI = {};
+var ModularityRecommend = {};

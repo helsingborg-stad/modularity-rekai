@@ -1,6 +1,6 @@
 <?php
 
-namespace ModularityRekAI\Helper;
+namespace ModularityRecommend\Helper;
 
 class CacheBust
 {
@@ -28,7 +28,7 @@ class CacheBust
     public static function getRevManifest()
     {
         $jsonPath = MODULARITYREKAI_PATH . apply_filters(
-            'ModularityRekAI/Helper/CacheBust/RevManifestPath',
+            'ModularityRecommend/Helper/CacheBust/RevManifestPath',
             'dist/manifest.json'
         );
 

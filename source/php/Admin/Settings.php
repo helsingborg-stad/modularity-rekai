@@ -1,10 +1,10 @@
 <?php
 
-namespace ModularityRekAI\Admin;
+namespace ModularityRecommend\Admin;
 
 /**
  * Class RekAI
- * @package ModularityRekAI
+ * @package ModularityRecommend
  */
 class Settings
 {
@@ -20,9 +20,9 @@ class Settings
     {
         if (function_exists('acf_add_options_sub_page')) {
             acf_add_options_sub_page(array(
-                'page_title'  => _x("RekAI", "ACF", 'modularity-rekai'),
-                'menu_title'  => __("RekAI", "RekAI", 'modularity-rekai'),
-                'menu_slug'   => 'modularity-rekai-settings',
+                'page_title'  => _x("RekAI", "ACF", 'modularity-recommend'),
+                'menu_title'  => __("RekAI", "RekAI", 'modularity-recommend'),
+                'menu_slug'   => 'modularity-recommend-settings',
                 'parent_slug' => 'options-general.php',
                 'capability'  => 'manage_options'
             ));

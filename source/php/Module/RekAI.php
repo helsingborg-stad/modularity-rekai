@@ -1,8 +1,8 @@
 <?php
 
-namespace ModularityRekAI\Module;
+namespace ModularityRecommend\Module;
 
-use ModularityRekAI\Helper\CacheBust;
+use ModularityRecommend\Helper\CacheBust;
 
 /**
  * Class RekAI
@@ -15,9 +15,9 @@ class RekAI extends \Modularity\Module
 
     public function init()
     {
-        $this->nameSingular = __("RekAI Recommendation", 'modularity-rekai');
-        $this->namePlural = __("RekAI Recommendation", 'modularity-rekai');
-        $this->description = __("RekAI view for recommendated links.", 'modularity-rekai');
+        $this->nameSingular = __("Recommend", 'modularity-recommend');
+        $this->namePlural = __("Recommend", 'modularity-recommend');
+        $this->description = __("Recommend view for links.", 'modularity-recommend');
     }
 
     /**
@@ -35,24 +35,24 @@ class RekAI extends \Modularity\Module
 
         //Translations
         $data['lang'] = (object) array(
-            'noData' => __("No static links provided to recommendation module. AI suggestion is off.", 'modularity-rekai')
+            'noData' => __("No static links provided to recommendation module. AI suggestion is off.", 'modularity-recommend')
         );
 
         //Get permalink, reformat to object
-        if (!empty($data['rekaiLinkList'])) {
-            $data['rekaiLinkList'] = array_map(function ($item) {
-                if (is_integer($item['rekaiTarget'])) {
-                    $item['rekaiTarget'] = get_permalink($item['rekaiTarget']);
+        if (!empty($data['recommendLinkList'])) {
+            $data['recommendLinkList'] = array_map(function ($item) {
+                if (is_integer($item['recommendTarget'])) {
+                    $item['recommendTarget'] = get_permalink($item['recommendTarget']);
                 }
                 return (object) $item;
-            }, $data['rekaiLinkList']);
+            }, $data['recommendLinkList']);
         }
 
         //Enable RekAI
         $data['enableRekAI'] = get_field('rekai_enable', 'options');
 
         //Add uid
-        $data['rekaiUid'] = "prediction-mount-" . md5(rand());
+        $data['recommendUid'] = "prediction-mount-" . md5(rand());
 
         return $data;
     }
@@ -74,14 +74,14 @@ class RekAI extends \Modularity\Module
     {
         //Register custom css
         wp_register_style(
-            'modularity-rekai',
-            MODULARITYREKAI_URL . '/dist/' . CacheBust::name('css/modularity-rekai.css'),
+            'modularity-recommend',
+            MODULARITYREKAI_URL . '/dist/' . CacheBust::name('css/modularity-recommend.css'),
             null,
             '1.0.0'
         );
 
         //Enqueue
-        wp_enqueue_style('modularity-rekai');
+        wp_enqueue_style('modularity-recommend');
     }
 
     /**

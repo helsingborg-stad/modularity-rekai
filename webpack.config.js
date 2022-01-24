@@ -17,7 +17,7 @@ module.exports = {
      * Add your entry files here
      */
     entry: {
-        'css/modularity-rekai':               './source/sass/modularity-rekai.scss',
+        'css/modularity-recommend':               './source/sass/modularity-recommend.scss',
     },
     
     /**

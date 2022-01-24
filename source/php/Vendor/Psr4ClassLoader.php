@@ -1,6 +1,6 @@
 <?php
 
-namespace ModularityRekAI\Vendor;
+namespace ModularityRecommend\Vendor;
 
 /**
  * A PSR-4 compatible class loader.

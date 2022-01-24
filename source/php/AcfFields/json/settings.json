@@ -51,7 +51,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "modularity-rekai-settings"
+                "value": "modularity-recommend-settings"
             }
         ]
     ],
@@ -64,4 +64,4 @@
     "active": true,
     "description": ""
 }]
-
+

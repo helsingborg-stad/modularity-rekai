@@ -1,8 +1,8 @@
 <?php
 
-namespace ModularityRekAI;
+namespace ModularityRecommend;
 
-use ModularityRekAI\Helper\CacheBust;
+use ModularityRecommend\Helper\CacheBust;
 
 class App
 {
@@ -59,12 +59,12 @@ class App
 
         if ($scriptUrl) {
             wp_register_script(
-                'modularity-rekai-stats',
+                'modularity-recommend-stats',
                 $scriptUrl,
                 null,
                 '1.0.0'
             );
-            wp_enqueue_script('modularity-rekai-stats');
+            wp_enqueue_script('modularity-recommend-stats');
         }
     }
 

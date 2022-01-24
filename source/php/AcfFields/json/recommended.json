@@ -133,7 +133,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "mod-rekai"
+                "value": "mod-recommend"
             }
         ],
         [
@@ -153,4 +153,4 @@
     "active": true,
     "description": ""
 }]
-
+

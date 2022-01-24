@@ -1,18 +1,18 @@
 {
-  "name": "modularity-rekai",
+  "name": "modularity-recommend",
   "version": "1.0.0",
   "description": "Modularity RekAI",
   "main": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/helsingborg-stad/modularity-rekai"
+    "url": "https://github.com/helsingborg-stad/modularity-recommend"
   },
   "author": "Sebastian Thulin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/helsingborg-stad/modularity-rekai/issues"
+    "url": "https://github.com/helsingborg-stad/modularity-recommend/issues"
   },
-  "homepage": "https://github.com/helsingborg-stad/modularity-rekai",
+  "homepage": "https://github.com/helsingborg-stad/modularity-recommend",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "cross-env NODE_ENV=development webpack --watch",

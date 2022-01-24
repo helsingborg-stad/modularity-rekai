@@ -34,7 +34,7 @@ Settings
 
 ## Releases
 
-https://github.com/helsingborg-stad/modularity-rekai/releases
+https://github.com/helsingborg-stad/modularity-recommend/releases
 
 ## Authors
 
