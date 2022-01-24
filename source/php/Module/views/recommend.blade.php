@@ -17,6 +17,11 @@
                 ])
             @endforeach
         @endif
+
+        <!-- Preloader -->
+        @include('partials.preload', [
+            'rekaiNumberOfRecommendation' => $rekaiNumberOfRecommendation
+        ])
     </div>
     <script>
         window.addEventListener("load", function(){
@@ -26,6 +31,16 @@
                 let targetId = document.getElementById("{{$recommendUid}}");
                 
                 if(targetId) {
+
+                    //Remove the preloader
+                    let preloaderItems = targetId.querySelectorAll(".u-preloader");
+                    if(preloaderItems) {
+                        preloaderItems.forEach(function(item) {
+                            item.remove();
+                        });
+                    }
+
+                    //Append content
                     for(var i = 0; i < data.predictions.length; i++) {
                         s = '<?php echo modularity_recommend_render_blade_view("partials.button", ["href"=> "{MOD_RECOMMEND_HREF}", "text" => "{MOD_RECOMMEND_TITLE}", "type" => "dynamic"]); ?> ';
                     
@@ -39,7 +54,7 @@
             window.__rekai.predict({
                 overwrite: {
                     addcontent: true,
-                    userootpath: true,
+                    userootpath: false,
                     nrofhits: {{$rekaiNumberOfRecommendation}},
                 }
             }, renderHtml);
