@@ -1,5 +1,5 @@
-# RekAI for Modularity
-Display RekAI as a module.
+# Recommend for Modularity
+Display recommendated link list. Optionally enable rek.ai to autosuggest links related to current page. 
 
 ## Getting Started
 Get the latest version and follow the installation steps bellow.
