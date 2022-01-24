@@ -12,7 +12,7 @@
             @foreach($recommendLinkList as $recommendLink)
                 @include('partials.button', [
                     "text" => $recommendLink->recommendLinkLabel,
-                    "href" => $recommendLink->recommendTarget,
+                    "href" => $recommendLink->recommendLinkTarget,
                     "type" => "static",
                 ])
             @endforeach
@@ -50,7 +50,7 @@
         @foreach($recommendLinkList as $recommendLink)
             @include('partials.button', [
                 "text" => $recommendLink->recommendLinkLabel,
-                "href" => $recommendLink->recommendTarget,
+                "href" => $recommendLink->recommendLinkTarget,
                 "type" => "static",
             ])
         @endforeach

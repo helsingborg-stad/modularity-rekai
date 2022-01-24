@@ -5,12 +5,12 @@ namespace ModularityRecommend\Module;
 use ModularityRecommend\Helper\CacheBust;
 
 /**
- * Class RekAI
- * @package RekAI\Module
+ * Class Recommend
+ * @package Recommend\Module
  */
-class RekAI extends \Modularity\Module
+class Recommend extends \Modularity\Module
 {
-    public $slug = 'rekai';
+    public $slug = 'recommend';
     public $supports = array();
 
     public function init()
@@ -35,7 +35,10 @@ class RekAI extends \Modularity\Module
 
         //Translations
         $data['lang'] = (object) array(
-            'noData' => __("No static links provided to recommendation module. AI suggestion is off.", 'modularity-recommend')
+            'noData' => __(
+                "No static links provided to recommendation module. AI suggestion is off.",
+                'modularity-recommend'
+            )
         );
 
         //Get permalink, reformat to object
@@ -63,7 +66,7 @@ class RekAI extends \Modularity\Module
      */
     public function template(): string
     {
-        return "rekai.blade.php";
+        return "recommend.blade.php";
     }
 
     /**
@@ -75,7 +78,7 @@ class RekAI extends \Modularity\Module
         //Register custom css
         wp_register_style(
             'modularity-recommend',
-            MODULARITYREKAI_URL . '/dist/' . CacheBust::name('css/modularity-recommend.css'),
+            MODULARITYRECOMMEND_URL . '/dist/' . CacheBust::name('css/modularity-recommend.css'),
             null,
             '1.0.0'
         );

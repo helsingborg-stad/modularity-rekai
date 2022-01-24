@@ -76,8 +76,8 @@ class App
     {
         if (function_exists('modularity_register_module')) {
             modularity_register_module(
-                MODULARITYREKAI_MODULE_PATH,
-                'RekAI'
+                MODULARITYRECOMMEND_MODULE_PATH,
+                'Recommend'
             );
         }
     }
@@ -91,10 +91,10 @@ class App
     {
         // If child theme is active, insert plugin view path after child views path.
         if (is_child_theme()) {
-            array_splice($array, 2, 0, array(MODULARITYREKAI_VIEW_PATH));
+            array_splice($array, 2, 0, array(MODULARITYRECOMMEND_VIEW_PATH));
         } else {
             // Add view path first in the list if child theme is not active.
-            array_unshift($array, MODULARITYREKAI_VIEW_PATH);
+            array_unshift($array, MODULARITYRECOMMEND_VIEW_PATH);
         }
 
         return $array;

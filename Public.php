@@ -6,7 +6,7 @@ if (!function_exists('modularity_recommend_render_blade_view')) {
     function modularity_recommend_render_blade_view($view, $data = [], $compress = true)
     {
         $init = new ComponentLibraryInit([
-            MODULARITYREKAI_MODULE_VIEW_PATH
+            MODULARITYRECOMMEND_MODULE_VIEW_PATH
         ]);
 
         $bladeEngine = $init->getEngine();

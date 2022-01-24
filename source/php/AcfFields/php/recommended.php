@@ -1,9 +1,7 @@
 <?php 
 
-
-if (function_exists('acf_add_local_field_group')) {
-
-    acf_add_local_field_group(array(
+if (function_exists('acf_add_local_field_group')) {
+    acf_add_local_field_group(array(
     'key' => 'group_61ea7a87e8e9f',
     'title' => __('Recommendations', 'modularity-recommend'),
     'fields' => array(
@@ -27,7 +25,7 @@ if (function_exists('acf_add_local_field_group')) {
         1 => array(
             'key' => 'field_61ea7ae22b203',
             'label' => __('Link list', 'modularity-recommend'),
-            'name' => 'rekai_link_list',
+            'name' => 'recommend_link_list',
             'type' => 'repeater',
             'instructions' => '',
             'required' => 0,
@@ -39,14 +37,14 @@ if (function_exists('acf_add_local_field_group')) {
             ),
             'collapsed' => 'field_61ea7afd2b204',
             'min' => 0,
-            'max' => 0,
+            'max' => 20,
             'layout' => 'table',
             'button_label' => __('Add new recommendation', 'modularity-recommend'),
             'sub_fields' => array(
                 0 => array(
                     'key' => 'field_61ea7afd2b204',
                     'label' => __('Label', 'modularity-recommend'),
-                    'name' => 'rekai_link_label',
+                    'name' => 'recommend_link_label',
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 1,
@@ -65,7 +63,7 @@ if (function_exists('acf_add_local_field_group')) {
                 1 => array(
                     'key' => 'field_61ea7b1c2b205',
                     'label' => __('Target', 'modularity-recommend'),
-                    'name' => 'rekai_target',
+                    'name' => 'recommend_link_target',
                     'type' => 'post_object',
                     'instructions' => '',
                     'required' => 1,
@@ -85,27 +83,8 @@ if (function_exists('acf_add_local_field_group')) {
             ),
         ),
         2 => array(
-            'key' => 'field_61eab64ec9a8a',
-            'label' => __('Enable AI suggest', 'modularity-recommend'),
-            'name' => 'rekai_enable_ai_suggest',
-            'type' => 'true_false',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '50',
-                'class' => '',
-                'id' => '',
-            ),
-            'message' => __('Yes, enable RekAI.', 'modularity-recommend'),
-            'default_value' => 1,
-            'ui' => 0,
-            'ui_on_text' => '',
-            'ui_off_text' => '',
-        ),
-        3 => array(
             'key' => 'field_61eab66ec9a8b',
-            'label' => __('Max number of recommendations', 'modularity-recommend'),
+            'label' => __('Max number of autosuggested recommendations', 'modularity-recommend'),
             'name' => 'rekai_number_of_recommendation',
             'type' => 'number',
             'instructions' => '',
@@ -113,14 +92,13 @@ if (function_exists('acf_add_local_field_group')) {
             'conditional_logic' => array(
                 0 => array(
                     0 => array(
-                        'field' => 'field_61eab64ec9a8a',
-                        'operator' => '==',
-                        'value' => '1',
+                        'field' => 'field_61ea7ae22b203',
+                        'operator' => '!=empty',
                     ),
                 ),
             ),
             'wrapper' => array(
-                'width' => '50',
+                'width' => '',
                 'class' => '',
                 'id' => '',
             ),
@@ -128,8 +106,8 @@ if (function_exists('acf_add_local_field_group')) {
             'placeholder' => __('items', 'modularity-recommend'),
             'prepend' => '',
             'append' => __('items', 'modularity-recommend'),
-            'min' => 1,
-            'max' => 20,
+            'min' => 0,
+            'max' => 10,
             'step' => 1,
         ),
     ),
@@ -145,7 +123,7 @@ if (function_exists('acf_add_local_field_group')) {
             0 => array(
                 'param' => 'block',
                 'operator' => '==',
-                'value' => 'acf/rekai',
+                'value' => 'acf/recommend',
             ),
         ),
     ),
@@ -158,5 +136,4 @@ if (function_exists('acf_add_local_field_group')) {
     'active' => true,
     'description' => '',
 ));
-
-}
+}

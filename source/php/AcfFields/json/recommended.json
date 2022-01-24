@@ -22,7 +22,7 @@
         {
             "key": "field_61ea7ae22b203",
             "label": "Link list",
-            "name": "rekai_link_list",
+            "name": "recommend_link_list",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -34,14 +34,14 @@
             },
             "collapsed": "field_61ea7afd2b204",
             "min": 0,
-            "max": 0,
+            "max": 20,
             "layout": "table",
             "button_label": "Add new recommendation",
             "sub_fields": [
                 {
                     "key": "field_61ea7afd2b204",
                     "label": "Label",
-                    "name": "rekai_link_label",
+                    "name": "recommend_link_label",
                     "type": "text",
                     "instructions": "",
                     "required": 1,
@@ -60,7 +60,7 @@
                 {
                     "key": "field_61ea7b1c2b205",
                     "label": "Target",
-                    "name": "rekai_target",
+                    "name": "recommend_link_target",
                     "type": "post_object",
                     "instructions": "",
                     "required": 1,
@@ -80,27 +80,8 @@
             ]
         },
         {
-            "key": "field_61eab64ec9a8a",
-            "label": "Enable AI suggest",
-            "name": "rekai_enable_ai_suggest",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "message": "Yes, enable RekAI.",
-            "default_value": 1,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_61eab66ec9a8b",
-            "label": "Max number of recommendations",
+            "label": "Max number of autosuggested recommendations",
             "name": "rekai_number_of_recommendation",
             "type": "number",
             "instructions": "",
@@ -108,14 +89,13 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_61eab64ec9a8a",
-                        "operator": "==",
-                        "value": "1"
+                        "field": "field_61ea7ae22b203",
+                        "operator": "!=empty"
                     }
                 ]
             ],
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -123,8 +103,8 @@
             "placeholder": "items",
             "prepend": "",
             "append": "items",
-            "min": 1,
-            "max": 20,
+            "min": 0,
+            "max": 10,
             "step": 1
         }
     ],
@@ -140,7 +120,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/rekai"
+                "value": "acf\/recommend"
             }
         ]
     ],
@@ -153,4 +133,4 @@
     "active": true,
     "description": ""
 }]
-
+
