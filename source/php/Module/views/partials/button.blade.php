@@ -6,8 +6,8 @@
     'size' => 'sm',
     'context' => ['module.recommend', 'module.recommend.button'],
     'classList' => [
-        'rek-ai-linklist__item', 
-        'rek-ai-linklist__' . $type . '-item'
+        'recommend-linklist__item', 
+        'recommend-linklist__' . $type . '-item'
     ],
 ])
 @endbutton
