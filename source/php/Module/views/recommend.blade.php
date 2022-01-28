@@ -25,7 +25,7 @@
         ])
     </div>
     <script>
-        window.addEventListener("load", function(){
+        window.addEventListener("rekai.load", function(){
             function renderHtml(data) {
                 
                 let s = '';
