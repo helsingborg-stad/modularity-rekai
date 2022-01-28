@@ -28,7 +28,7 @@
         window.addEventListener("rekai.load", function(){
             function renderHtml(data) {
                 
-                let s = '';
+                let rekAiInputString = '';
                 let targetId = document.getElementById("{{$recommendUid}}");
                 
                 if(targetId) {
@@ -43,12 +43,12 @@
 
                     //Append content
                     for(var i = 0; i < data.predictions.length; i++) {
-                        s = '<?php echo modularity_recommend_render_blade_view("partials.button", ["href"=> "{MOD_RECOMMEND_HREF}", "text" => "{MOD_RECOMMEND_TITLE}", "type" => "dynamic"]); ?> ';
+                        rekAiInputString = '<?php echo modularity_recommend_render_blade_view("partials.button", ["href"=> "{MOD_RECOMMEND_HREF}", "text" => "{MOD_RECOMMEND_TITLE}", "type" => "dynamic"]); ?> ';
                     
-                        s = s.replace("{MOD_RECOMMEND_HREF}", data.predictions[i].url); 
-                        s = s.replace("{MOD_RECOMMEND_TITLE}", data.predictions[i].title); 
+                        rekAiInputString = rekAiInputString.replace("{MOD_RECOMMEND_HREF}", data.predictions[i].url); 
+                        rekAiInputString = rekAiInputString.replace("{MOD_RECOMMEND_TITLE}", data.predictions[i].title); 
 
-                        targetId.insertAdjacentHTML("beforeend", s);
+                        targetId.insertAdjacentHTML("beforeend", rekAiInputString);
                     }
                 }
             }
