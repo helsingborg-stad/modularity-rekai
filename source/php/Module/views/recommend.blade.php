@@ -64,13 +64,15 @@
     </script>
 @else
     @if($recommendLinkList) 
-        @foreach($recommendLinkList as $recommendLink)
-            @include('partials.button', [
-                "text" => $recommendLink->recommendLinkLabel,
-                "href" => $recommendLink->recommendLinkTarget,
-                "type" => "static",
-            ])
-        @endforeach
+        <div id="{{$recommendUid}}" class="mod-recommend__items">
+            @foreach($recommendLinkList as $recommendLink)
+                @include('partials.button', [
+                    "text" => $recommendLink->recommendLinkLabel,
+                    "href" => $recommendLink->recommendLinkTarget,
+                    "type" => "static",
+                ])
+            @endforeach
+        </div>
     @else
         @notice([
             'type' => 'info',
