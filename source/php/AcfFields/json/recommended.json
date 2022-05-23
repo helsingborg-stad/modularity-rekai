@@ -99,6 +99,25 @@
             "min": 0,
             "max": 10,
             "step": 1
+        },
+        {
+            "key": "field_628b4e43953e8",
+            "label": "RekAI Options",
+            "name": "recommend_rekai_options",
+            "type": "textarea",
+            "instructions": "Add custom options in JSON format.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "{ \"key\": \"value\" }",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         }
     ],
     "location": [

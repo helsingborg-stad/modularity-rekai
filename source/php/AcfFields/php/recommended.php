@@ -103,6 +103,25 @@
             'max' => 10,
             'step' => 1,
         ),
+        3 => array(
+            'key' => 'field_628b4e43953e8',
+            'label' => __('RekAI Options', 'modularity-recommend'),
+            'name' => 'recommend_rekai_options',
+            'type' => 'textarea',
+            'instructions' => __('Add custom options in JSON format.', 'modularity-recommend'),
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => __('{ "key": "value" }', 'modularity-recommend'),
+            'maxlength' => '',
+            'rows' => '',
+            'new_lines' => '',
+        ),
     ),
     'location' => array(
         0 => array(
