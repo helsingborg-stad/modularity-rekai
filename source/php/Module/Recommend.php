@@ -33,6 +33,8 @@ class Recommend extends \Modularity\Module
             get_fields($this->ID)
         ));
 
+        $data['recommendRekaiOptions'] = json_encode($data['recommendRekaiOptions']);
+
         //Translations
         $data['lang'] = (object) array(
             'noData' => __(

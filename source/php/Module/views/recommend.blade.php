@@ -9,7 +9,7 @@
 
 @if($enableRekAI)
     <div id="{{$recommendUid}}" class="mod-recommend__items">
-        @if($recommendLinkList) 
+        @if($recommendLinkList)
             @foreach($recommendLinkList as $recommendLink)
                 @include('partials.button', [
                     "text" => $recommendLink->recommendLinkLabel,
@@ -27,10 +27,10 @@
     <script>
         window.addEventListener("rekai.load", function(){
             function renderHtml(data) {
-                
+
                 let rekAiInputString = '';
                 let targetId = document.getElementById("{{$recommendUid}}");
-                
+
                 if(targetId) {
 
                     //Remove the preloader
@@ -44,26 +44,34 @@
                     //Append content
                     for(var i = 0; i < data.predictions.length; i++) {
                         rekAiInputString = '<?php echo modularity_recommend_render_blade_view("partials.button", ["href"=> "{MOD_RECOMMEND_HREF}", "text" => "{MOD_RECOMMEND_TITLE}", "type" => "dynamic"]); ?> ';
-                    
-                        rekAiInputString = rekAiInputString.replace("{MOD_RECOMMEND_HREF}", data.predictions[i].url); 
-                        rekAiInputString = rekAiInputString.replace("{MOD_RECOMMEND_TITLE}", data.predictions[i].title); 
+
+                        rekAiInputString = rekAiInputString.replace("{MOD_RECOMMEND_HREF}", data.predictions[i].url);
+                        rekAiInputString = rekAiInputString.replace("{MOD_RECOMMEND_TITLE}", data.predictions[i].title);
 
                         targetId.insertAdjacentHTML("beforeend", rekAiInputString);
                     }
                 }
             }
 
-            window.__rekai.predict({
-                overwrite: {
-                    addcontent: true,
-                    userootpath: true,
-                    nrofhits: {{$rekaiNumberOfRecommendation}},
-                }
-            }, renderHtml);
+          var customOptions = {}
+          try {
+            customOptions = JSON.parse({!! $recommendRekaiOptions !!})
+          } catch (error) {
+            console.error(error)
+          }
+
+          var options = {
+            overwrite: {
+              nrofhits: {{$rekaiNumberOfRecommendation}},
+              ...customOptions
+            },
+          }
+
+          window.__rekai.predict(options, renderHtml);
         });
     </script>
 @else
-    @if($recommendLinkList) 
+    @if($recommendLinkList)
         <div id="{{$recommendUid}}" class="mod-recommend__items">
             @foreach($recommendLinkList as $recommendLink)
                 @include('partials.button', [
