@@ -80,6 +80,30 @@
             ]
         },
         {
+            "key": "field_628b9314f8dee",
+            "label": "Display as",
+            "name": "template",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "button": "Button",
+                "card": "Card"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "button",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_61eab66ec9a8b",
             "label": "Max number of autosuggested recommendations",
             "name": "rekai_number_of_recommendation",
@@ -101,11 +125,11 @@
             "step": 1
         },
         {
-            "key": "field_628b4e43953e8",
-            "label": "RekAI Options",
-            "name": "recommend_rekai_options",
-            "type": "textarea",
-            "instructions": "Add custom options in JSON format.",
+            "key": "field_628c958c693a9",
+            "label": "RekAI",
+            "name": "rekai",
+            "type": "group",
+            "instructions": "Settings specific to RekAI.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -113,11 +137,116 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "{ \"key\": \"value\" }",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_628c963a693aa",
+                    "label": "Include pages",
+                    "name": "subtree",
+                    "type": "post_object",
+                    "instructions": "Controls whether only pages under a particular branch of the site should be displayed. Leave blank to include all pages.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 1,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_628c96c84e43c",
+                    "label": "Exclude pages",
+                    "name": "excludetree",
+                    "type": "post_object",
+                    "instructions": "Controls whether certain pages should be excluded from viewing.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 1,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_628ca57c99f4b",
+                    "label": "Filter from current page",
+                    "name": "userootpath",
+                    "type": "true_false",
+                    "instructions": "Automatically filter recommendations based on the current url.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_628ca7e268d09",
+                    "label": "Url level",
+                    "name": "rootpathlevel",
+                    "type": "number",
+                    "instructions": "Controls whether only pages below the current url path should be recommended from a certain level.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_628ca57c99f4b",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_628b4e43953e8",
+                    "label": "Advanced options",
+                    "name": "advanced_options",
+                    "type": "textarea",
+                    "instructions": "Add custom options in valid JSON format.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "{ \"key\": \"value\" }",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                }
+            ]
         }
     ],
     "location": [
