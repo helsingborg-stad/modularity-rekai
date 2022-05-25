@@ -30,7 +30,7 @@ class App
         //Remove rek ai field, if not enabled
         add_filter("acf/prepare_field/name=rekai_number_of_recommendation", array($this, 'hideRekAIField'));
 
-        add_filter('acf/load_field/name=recommend_rekai_options', array($this, 'hideRekAIOptions'));
+        add_filter('acf/load_field/key=field_628c958c693a9', array($this, 'hideRekAIOptions'));
     }
 
     public function hideRekAIField($field)
