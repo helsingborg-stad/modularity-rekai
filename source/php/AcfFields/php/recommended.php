@@ -107,6 +107,41 @@
             'save_other_choice' => 0,
         ),
         3 => array(
+            'key' => 'field_629078026dc49',
+            'label' => __('Columns', 'modularity-recommend'),
+            'name' => 'recommend_columns',
+            'type' => 'select',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                0 => array(
+                    0 => array(
+                        'field' => 'field_628b9314f8dee',
+                        'operator' => '==',
+                        'value' => 'card',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'choices' => array(
+                1 => __('1', 'modularity-recommend'),
+                2 => __('2', 'modularity-recommend'),
+                3 => __('3', 'modularity-recommend'),
+                4 => __('4', 'modularity-recommend'),
+            ),
+            'default_value' => false,
+            'allow_null' => 0,
+            'multiple' => 0,
+            'ui' => 0,
+            'return_format' => 'value',
+            'ajax' => 0,
+            'placeholder' => '',
+        ),
+        4 => array(
             'key' => 'field_61eab66ec9a8b',
             'label' => __('Max number of autosuggested recommendations', 'modularity-recommend'),
             'name' => 'rekai_number_of_recommendation',
@@ -127,7 +162,7 @@
             'max' => 10,
             'step' => 1,
         ),
-        4 => array(
+        5 => array(
             'key' => 'field_628c958c693a9',
             'label' => __('RekAI', 'modularity-recommend'),
             'name' => 'rekai',

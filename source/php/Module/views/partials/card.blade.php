@@ -1,8 +1,9 @@
-<div class="o-grid-12@md">
+<div class="o-grid-{{ $gridColumns }}">
   @card([
       'heading' => $heading,
       'content' => $content,
-      'link' => $href
+      'link' => $href,
+      'classList' => ['u-height--100'],
       ])
   @endcard
 </div>

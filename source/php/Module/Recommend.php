@@ -40,6 +40,7 @@ class Recommend extends \Modularity\Module
             'userootpath' => !empty($data['rekai']['userootpath']) ? true : false,
             'rootpathlevel' => !empty($data['rekai']['rootpathlevel']) ? (int)$data['rekai']['rootpathlevel'] : null
         ]);
+        $data['gridColumns'] = $data['recommendColumns'] ? 12 / (int)$data['recommendColumns'] : null;
 
         //Translations
         $data['lang'] = (object) array(

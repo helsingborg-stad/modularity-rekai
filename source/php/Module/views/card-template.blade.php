@@ -2,9 +2,10 @@
       @if($recommendLinkList)
             @foreach($recommendLinkList as $recommendLink)
                 @include('partials.card', [
-                    "text" => $recommendLink->recommendLinkLabel,
+                    "heading" => $recommendLink->recommendLinkLabel,
+                    "content" => "Some text to e replaced",
                     "href" => $recommendLink->recommendLinkTarget,
-                    "type" => "static",
+                    "gridColumns" => $gridColumns,
                 ])
             @endforeach
       @endif

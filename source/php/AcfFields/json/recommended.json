@@ -104,6 +104,41 @@
             "save_other_choice": 0
         },
         {
+            "key": "field_629078026dc49",
+            "label": "Columns",
+            "name": "recommend_columns",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_628b9314f8dee",
+                        "operator": "==",
+                        "value": "card"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "1",
+                "2": "2",
+                "3": "3",
+                "4": "4"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_61eab66ec9a8b",
             "label": "Max number of autosuggested recommendations",
             "name": "rekai_number_of_recommendation",
