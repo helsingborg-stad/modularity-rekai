@@ -3,8 +3,8 @@
             @foreach($recommendLinkList as $recommendLink)
                 @include('partials.card', [
                     "heading" => $recommendLink->recommendLinkLabel,
-                    "content" => "Some text to e replaced",
-                    "href" => $recommendLink->recommendLinkTarget,
+                    "content" => get_the_excerpt($recommendLink->recommendLinkTarget),
+                    "href" => get_permalink($recommendLink->recommendLinkTarget),
                     "gridColumns" => $gridColumns,
                 ])
             @endforeach

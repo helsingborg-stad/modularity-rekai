@@ -3,7 +3,7 @@
             @foreach($recommendLinkList as $recommendLink)
                 @include('partials.button', [
                     "text" => $recommendLink->recommendLinkLabel,
-                    "href" => $recommendLink->recommendLinkTarget,
+                    "href" => get_permalink($recommendLink->recommendLinkTarget),
                     "type" => "static",
                 ])
             @endforeach
