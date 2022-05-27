@@ -1,4 +1,4 @@
-<div class="o-grid">
+<div class="o-grid rek-ai-preload-remove">
   @for ($i = 0; $i < $rekaiNumberOfRecommendation; $i++)
       <div class="c-card">
           <div class="c-card__body">

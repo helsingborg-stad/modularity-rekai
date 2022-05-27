@@ -38,7 +38,7 @@
 
                 if(targetId) {
                     //Remove the preloader
-                    let preloaderItems = targetId.querySelectorAll(".u-preloader, .o-grid");
+                    let preloaderItems = targetId.querySelectorAll(".rek-ai-preload-remove");
                     if(preloaderItems) {
                         preloaderItems.forEach(function(item) {
                             item.remove();
