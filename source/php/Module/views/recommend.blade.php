@@ -20,9 +20,8 @@
                 view = '<?php echo modularity_recommend_render_blade_view("partials.card", ["heading" => "{MOD_RECOMMEND_TITLE}", "content" => "{MOD_RECOMMEND_CONTENT}", "href" => "{MOD_RECOMMEND_HREF}"]); ?>';
                 break;
               case "button":
-                view = '<?php echo modularity_recommend_render_blade_view("partials.button", ["href"=> "{MOD_RECOMMEND_HREF}", "text" => "{MOD_RECOMMEND_TITLE}", "type" => "dynamic"]); ?> ';
-                break;
               default:
+                view = '<?php echo modularity_recommend_render_blade_view("partials.button", ["href"=> "{MOD_RECOMMEND_HREF}", "text" => "{MOD_RECOMMEND_TITLE}", "type" => "dynamic"]); ?> ';
             }
 
             view = view.replace("{MOD_RECOMMEND_HREF}", data.url ?? '');
