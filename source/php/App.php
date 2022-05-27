@@ -29,9 +29,12 @@ class App
 
         //Remove rek ai field, if not enabled
         add_filter("acf/prepare_field/name=rekai_number_of_recommendation", array($this, 'hideRekAIField'));
+
+        add_filter('acf/load_field/key=field_628c958c693a9', array($this, 'hideRekAIOptions'));
     }
 
-    public function hideRekAIField($field) {
+    public function hideRekAIField($field)
+    {
         if (get_field('rekai_enable', 'options') == false) {
             return false;
         }
@@ -42,7 +45,8 @@ class App
      * Console log undefined warning
      * @return void
      */
-    public function addUndefinedWarning() {
+    public function addUndefinedWarning()
+    {
         if (get_field('rekai_enable', 'options') && empty(get_field('rekai_script_url', 'option'))) {
             echo '
                 <script>
@@ -108,5 +112,20 @@ class App
         }
 
         return $array;
+    }
+
+    /**
+     * Conditionally show field if RekAI is enabled
+     *
+     * @param array  $field
+     * @return array $field
+     */
+    public function hideRekAIOptions($field)
+    {
+        if (get_field('rekai_enable', 'options') == false) {
+            $field['wrapper']['class'] = 'hidden';
+        }
+
+        return $field;
     }
 }

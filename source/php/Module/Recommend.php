@@ -33,6 +33,14 @@ class Recommend extends \Modularity\Module
             get_fields($this->ID)
         ));
 
+        $data['advancedOptions'] = json_encode(!empty($data['rekai']['advancedOptions']) ? $data['rekai']['advancedOptions'] : "null");
+        $data['rekaiOptions'] = json_encode([
+            'subtree' => !empty($data['rekai']['subtree']) ? $this->convertPostsToString($data['rekai']['subtree']) : "",
+            'excludetree' => !empty($data['rekai']['excludetree']) ? $this->convertPostsToString($data['rekai']['excludetree']) : "",
+            'userootpath' => !empty($data['rekai']['userootpath']) ? true : false,
+            'rootpathlevel' => !empty($data['rekai']['rootpathlevel']) ? (int)$data['rekai']['rootpathlevel'] : null
+        ]);
+
         //Translations
         $data['lang'] = (object) array(
             'noData' => __(
@@ -58,6 +66,20 @@ class Recommend extends \Modularity\Module
         $data['recommendUid'] = "prediction-mount-" . md5(rand());
 
         return $data;
+    }
+
+    /**
+     * Converts post names to comma separated string
+     * @param array $posts
+     * @return string
+     */
+    public function convertPostsToString(array $posts)
+    {
+        $string = "";
+        foreach ($posts as $post) {
+            $string .= $post->post_name . ",";
+        }
+        return rtrim($string, ",");
     }
 
     /**
