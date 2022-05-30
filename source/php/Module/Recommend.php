@@ -53,9 +53,8 @@ class Recommend extends \Modularity\Module
         //Get permalink, reformat to object
         if (!empty($data['recommendLinkList'])) {
             $data['recommendLinkList'] = array_map(function ($item) {
-                if (is_integer($item['recommendTarget'])) {
-                    $item['recommendTarget'] = get_permalink($item['recommendTarget']);
-                }
+                $item['recommendTarget'] = get_permalink($item['recommendLinkTarget']);
+                $item['recommendExcerpt'] = get_the_excerpt($item['recommendLinkTarget']);
                 return (object) $item;
             }, $data['recommendLinkList']);
         }
