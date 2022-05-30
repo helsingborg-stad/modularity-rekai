@@ -3,19 +3,16 @@
           <div class="c-card__body">
           @typography([
             'element' => 'h4',
-            'classList' => ['u-preloader'],
+            'classList' => ['u-preloader', 'u-rounded'],
             'attributeList' => [
-              'style' => 'width: ' .rand(30, 90). '%; border-radius: var(--border-radis-md, 8px);'
+              'style' => 'width: ' .rand(30, 90). '%;'
             ]
           ])
           <br>
           @endtypography
           @typography([
             'element' => 'p',
-            'classList' => ['u-preloader'],
-            'attributeList' => [
-              'style' => 'border-radius: var(--border-radis-md, 8px);'
-            ]
+            'classList' => ['u-preloader', 'u-rounded']
           ])
           <br><br>
           @endtypography
