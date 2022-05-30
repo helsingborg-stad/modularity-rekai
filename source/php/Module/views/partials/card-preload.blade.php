@@ -1,5 +1,5 @@
   @for ($i = 0; $i < $rekaiNumberOfRecommendation; $i++)
-      <div class="c-card o-grid-{{ $gridColumns }} rek-ai-preload-remove">
+      <div class="c-card rek-ai-preload-remove {{ $gridClass }}">
           <div class="c-card__body">
           @typography([
             'element' => 'h4',

@@ -17,7 +17,7 @@
             let view = '';
             switch(template) {
               case "card":
-                view = '<?php echo modularity_recommend_render_blade_view("partials.card", ["heading" => "{MOD_RECOMMEND_TITLE}", "content" => "{MOD_RECOMMEND_CONTENT}", "href" => "{MOD_RECOMMEND_HREF}", "gridColumns" => $gridColumns]); ?>';
+                view = '<?php echo modularity_recommend_render_blade_view("partials.card", ["heading" => "{MOD_RECOMMEND_TITLE}", "content" => "{MOD_RECOMMEND_CONTENT}", "href" => "{MOD_RECOMMEND_HREF}", "gridClass" => $gridClass]); ?>';
                 break;
               case "button":
               default:

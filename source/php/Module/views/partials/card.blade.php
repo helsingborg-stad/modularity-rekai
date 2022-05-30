@@ -1,4 +1,4 @@
-<div class="o-grid-{{ $gridColumns }}">
+<div class="{{ $gridClass }}">
   @card([
       'heading' => $heading,
       'content' => $content,
