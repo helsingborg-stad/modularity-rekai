@@ -104,6 +104,41 @@
             "save_other_choice": 0
         },
         {
+            "key": "field_629078026dc49",
+            "label": "Columns",
+            "name": "recommend_columns",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_628b9314f8dee",
+                        "operator": "==",
+                        "value": "card"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "1",
+                "2": "2",
+                "3": "3",
+                "4": "4"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_61eab66ec9a8b",
             "label": "Max number of autosuggested recommendations",
             "name": "rekai_number_of_recommendation",
@@ -139,46 +174,6 @@
             },
             "layout": "block",
             "sub_fields": [
-                {
-                    "key": "field_628c963a693aa",
-                    "label": "Include pages",
-                    "name": "subtree",
-                    "type": "post_object",
-                    "instructions": "Controls whether only pages under a particular branch of the site should be displayed. Leave blank to include all pages.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": "",
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "multiple": 1,
-                    "return_format": "object",
-                    "ui": 1
-                },
-                {
-                    "key": "field_628c96c84e43c",
-                    "label": "Exclude pages",
-                    "name": "excludetree",
-                    "type": "post_object",
-                    "instructions": "Controls whether certain pages should be excluded from viewing.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": "",
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "multiple": 1,
-                    "return_format": "object",
-                    "ui": 1
-                },
                 {
                     "key": "field_628ca57c99f4b",
                     "label": "Filter from current page",
@@ -226,6 +221,54 @@
                     "min": "",
                     "max": "",
                     "step": ""
+                },
+                {
+                    "key": "field_628c963a693aa",
+                    "label": "Include pages",
+                    "name": "subtree",
+                    "type": "post_object",
+                    "instructions": "Controls whether only pages under a particular branch of the site should be displayed. Leave blank to include all pages.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_628ca57c99f4b",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 1,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_628c96c84e43c",
+                    "label": "Exclude pages",
+                    "name": "excludetree",
+                    "type": "post_object",
+                    "instructions": "Controls whether certain pages should be excluded from viewing.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 1,
+                    "return_format": "object",
+                    "ui": 1
                 },
                 {
                     "key": "field_628b4e43953e8",

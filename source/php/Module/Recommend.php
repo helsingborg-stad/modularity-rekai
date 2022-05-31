@@ -40,6 +40,7 @@ class Recommend extends \Modularity\Module
             'userootpath' => !empty($data['rekai']['userootpath']) ? true : false,
             'rootpathlevel' => !empty($data['rekai']['rootpathlevel']) ? (int)$data['rekai']['rootpathlevel'] : null
         ]);
+        $data['gridClass'] = $data['recommendColumns'] ? $this->getGridClass((int)$data['recommendColumns']) : null;
 
         //Translations
         $data['lang'] = (object) array(
@@ -52,9 +53,8 @@ class Recommend extends \Modularity\Module
         //Get permalink, reformat to object
         if (!empty($data['recommendLinkList'])) {
             $data['recommendLinkList'] = array_map(function ($item) {
-                if (is_integer($item['recommendTarget'])) {
-                    $item['recommendTarget'] = get_permalink($item['recommendTarget']);
-                }
+                $item['recommendTarget'] = get_permalink($item['recommendLinkTarget']);
+                $item['recommendExcerpt'] = get_the_excerpt($item['recommendLinkTarget']);
                 return (object) $item;
             }, $data['recommendLinkList']);
         }
@@ -66,6 +66,59 @@ class Recommend extends \Modularity\Module
         $data['recommendUid'] = "prediction-mount-" . md5(rand());
 
         return $data;
+    }
+
+    /**
+     * Create a grid column size
+     * @param  array $archiveProps
+     * @return string
+     */
+    public function getGridClass(int $columns): string
+    {
+        $stack = [];
+        $stack[] = $this->createGridClass(1);
+
+        if ($columns == 2) {
+            $stack[] = $this->createGridClass(2, 'md');
+            $stack[] = $this->createGridClass(2, 'lg');
+        }
+
+        if ($columns == 3) {
+            $stack[] = $this->createGridClass(2, 'md');
+            $stack[] = $this->createGridClass(3, 'lg');
+        }
+
+        if ($columns == 4) {
+            $stack[] = $this->createGridClass(2, 'sm');
+            $stack[] = $this->createGridClass(3, 'md');
+            $stack[] = $this->createGridClass(4, 'lg');
+        }
+
+        return implode(' ', $stack);
+    }
+
+    /**
+     * Create a grid class
+     *
+     * @param integer $numberOfColumns  The width of grid
+     * @param string  $mediaQuery       Target size
+     * @return string
+     */
+    public function createGridClass($numberOfColumns = 1, $mediaQuery = null)
+    {
+        $baseColumns = 12;
+
+        if ($numberOfColumns == 0) {
+            $numberOfColumns = 1;
+        }
+
+        if (is_string($mediaQuery)) {
+            $result = "o-grid-" . round($baseColumns / $numberOfColumns) . "@" . $mediaQuery;
+        } else {
+            $result = "o-grid-" . round($baseColumns / $numberOfColumns);
+        }
+
+        return $result;
     }
 
     /**
