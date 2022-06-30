@@ -71,6 +71,7 @@
           }
 
           window.__rekai.predict(options, renderHtml);
+          window.__rekai.checkAndAddEventsToDOM('.modularity-mod-recommend');
         });
     </script>
 @endif
