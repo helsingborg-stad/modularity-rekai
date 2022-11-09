@@ -24,9 +24,9 @@
                 view = '<?php echo modularity_recommend_render_blade_view("partials.button", ["href"=> "{MOD_RECOMMEND_HREF}", "text" => "{MOD_RECOMMEND_TITLE}", "type" => "dynamic"]); ?> ';
             }
 
-            view = view.replace("{MOD_RECOMMEND_HREF}", data.url ?? '');
-            view = view.replace("{MOD_RECOMMEND_TITLE}", data.title ?? '');
-            view = view.replace("{MOD_RECOMMEND_CONTENT}", data.ingress ?? '');
+            view = view.replaceAll("{MOD_RECOMMEND_HREF}", data.url ?? '');
+            view = view.replaceAll("{MOD_RECOMMEND_TITLE}", data.title ?? '');
+            view = view.replaceAll("{MOD_RECOMMEND_CONTENT}", data.ingress ?? '');
 
             return view;
           }
