@@ -8,13 +8,14 @@
               'style' => 'width: ' .rand(30, 90). '%;'
             ]
           ])
-          <br>
+            {{$lang->loading}}
           @endtypography
           @typography([
             'element' => 'p',
             'classList' => ['u-preloader', 'u-rounded']
           ])
-          <br><br>
+            {{$lang->loading}}
+            <br><br>
           @endtypography
           </div>
       </div>

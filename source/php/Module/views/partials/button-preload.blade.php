@@ -1,6 +1,7 @@
 @for ($i = 0; $i < $rekaiNumberOfRecommendation; $i++)
   @button([
     'size' => 'sm',
+    'text' => $lang->loading,
     'classList' => [
       'u-preloader',
       'recommend-linklist__item',

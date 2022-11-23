@@ -47,7 +47,11 @@ class Recommend extends \Modularity\Module
             'noData' => __(
                 "No static links provided to recommendation module. AI suggestion is off.",
                 'modularity-recommend'
-            )
+            ),
+            'loading' => __(
+                "Loading content",
+                'modularity-recommend'
+            ),
         );
 
         //Get permalink, reformat to object
