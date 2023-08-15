@@ -30,17 +30,22 @@ class Recommend extends \Modularity\Module
 
         //Append field config
         $data = array_merge($data, (array) \Modularity\Helper\FormatObject::camelCase(
-            get_fields($this->ID)
+            $this->getFields()
         ));
 
-        $data['advancedOptions'] = json_encode(!empty($data['rekai']['advancedOptions']) ? $data['rekai']['advancedOptions'] : "null");
-        $data['rekaiOptions'] = json_encode([
+        $data['advancedOptions']    = json_encode(!empty($data['rekai']['advancedOptions']) ? $data['rekai']['advancedOptions'] : "null");
+        $data['rekaiOptions']       = json_encode([
             'subtree' => !empty($data['rekai']['subtree']) ? $this->convertPostsToString($data['rekai']['subtree']) : "",
             'excludetree' => !empty($data['rekai']['excludetree']) ? $this->convertPostsToString($data['rekai']['excludetree']) : "",
             'userootpath' => !empty($data['rekai']['userootpath']) ? true : false,
             'rootpathlevel' => !empty($data['rekai']['rootpathlevel']) ? (int)$data['rekai']['rootpathlevel'] : null
         ]);
-        $data['gridClass'] = $data['recommendColumns'] ? $this->getGridClass((int)$data['recommendColumns']) : null;
+
+        if(isset($data['recommendColumns']) && is_numeric($data['recommendColumns'])) {
+            $data['gridClass'] =  $this->getGridClass((int) $data['recommendColumns']);
+        } else {
+            $data['gridClass'] = "";
+        }
 
         //Translations
         $data['lang'] = (object) array(
