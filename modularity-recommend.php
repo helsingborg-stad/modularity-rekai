@@ -27,14 +27,11 @@ define('MODULARITYRECOMMEND_MODULE_PATH', MODULARITYRECOMMEND_PATH . 'source/php
 
 load_plugin_textdomain('modularity-recommend', false, plugin_basename(dirname(__FILE__)) . '/languages');
 
-require_once MODULARITYRECOMMEND_PATH . 'source/php/Vendor/Psr4ClassLoader.php';
+// Autoload from plugin
+if (file_exists(MODULARITYRECOMMEND_PATH . 'vendor/autoload.php')) {
+    require_once MODULARITYRECOMMEND_PATH . 'vendor/autoload.php';
+}
 require_once MODULARITYRECOMMEND_PATH . 'Public.php';
-
-// Instantiate and register the autoloader
-$loader = new ModularityRecommend\Vendor\Psr4ClassLoader();
-$loader->addPrefix('ModularityRecommend', MODULARITYRECOMMEND_PATH);
-$loader->addPrefix('ModularityRecommend', MODULARITYRECOMMEND_PATH . 'source/php/');
-$loader->register();
 
 // Acf auto import and export
 $acfExportManager = new \AcfExportManager\AcfExportManager();
