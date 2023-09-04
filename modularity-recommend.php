@@ -34,14 +34,16 @@ if (file_exists(MODULARITYRECOMMEND_PATH . 'vendor/autoload.php')) {
 require_once MODULARITYRECOMMEND_PATH . 'Public.php';
 
 // Acf auto import and export
-$acfExportManager = new \AcfExportManager\AcfExportManager();
-$acfExportManager->setTextdomain('modularity-recommend');
-$acfExportManager->setExportFolder(MODULARITYRECOMMEND_PATH . 'source/php/AcfFields/');
-$acfExportManager->autoExport(array(
-    'recommended' => 'group_61ea7a87e8e9f',
-    'settings' => 'group_61eaa5feb2601',
-));
-$acfExportManager->import();
+add_action('acf/init', function () {
+    $acfExportManager = new \AcfExportManager\AcfExportManager();
+    $acfExportManager->setTextdomain('modularity-recommend');
+    $acfExportManager->setExportFolder(MODULARITYRECOMMEND_PATH . 'source/php/AcfFields/');
+    $acfExportManager->autoExport(array(
+        'recommended' => 'group_61ea7a87e8e9f',
+        'settings' => 'group_61eaa5feb2601',
+    ));
+    $acfExportManager->import();
+});
 
 // Modularity 3.0 ready - ViewPath for Component library
 add_filter('/Modularity/externalViewPath', function ($arr) {
