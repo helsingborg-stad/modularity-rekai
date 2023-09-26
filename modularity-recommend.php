@@ -4,7 +4,7 @@
  * Plugin Name:       Modularity Recommend
  * Plugin URI:        https://github.com/helsingborg-stad/modularity-recommend
  * Description:       Display Recommended links, static or AI generated links from RekAI.
- * Version:           1.0.0
+ * Version: 1.0.0
  * Author:            Sebastian Thulin
  * Author URI:        https://github.com/sebastianthulin
  * License:           MIT
