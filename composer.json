@@ -10,7 +10,7 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": [],
+    "require": {},
     "repositories": [
         {
             "type": "vcs",
@@ -22,5 +22,5 @@
             "ModularityRecommend\\": "source/php/"
         }
     },
-    "version": "1.0.0"
+    "version": "2.0.2"
 }
