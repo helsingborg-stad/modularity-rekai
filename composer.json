@@ -11,12 +11,6 @@
     ],
     "minimum-stability": "stable",
     "require": {},
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/modularity-recommend.git"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "ModularityRecommend\\": "source/php/"
