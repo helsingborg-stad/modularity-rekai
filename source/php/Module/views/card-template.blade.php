@@ -4,8 +4,7 @@
                 @include('partials.card', [
                     "heading" => $recommendLink->recommendLinkLabel,
                     "content" => $recommendLink->recommendExcerpt,
-                    "href" => $recommendLink->recommendTarget,
-                    "gridColumns" => $gridColumns,
+                    "href" => $recommendLink->recommendTarget
                 ])
             @endforeach
       @endif
