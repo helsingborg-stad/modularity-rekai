@@ -1,6 +1,6 @@
 {
     "name": "@helsingborg-stad/modularity-recommend",
-    "version": "3.0.2",
+    "version": "3.0.3",
     "description": "Modularity RekAI",
     "main": "",
     "repository": {
@@ -19,7 +19,9 @@
         "build:dev": "cross-env NODE_ENV=development webpack",
         "build": "cross-env NODE_ENV=production webpack"
     },
-    "files": ["dist/"],
+    "files": [
+        "dist/"
+    ],
     "devDependencies": {
         "autoprefixer": "^10.4.2",
         "browser-sync": "^2.27.7",
