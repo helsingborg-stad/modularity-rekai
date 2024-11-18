@@ -8,7 +8,7 @@
     'classList' => [
         'recommend-linklist__item',
         'recommend-linklist__' . $type . '-item',
-        'c-button--pill'
+        'c-button--pill',
     ],
 ])
 @endbutton

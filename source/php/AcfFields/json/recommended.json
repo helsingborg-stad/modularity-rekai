@@ -6,6 +6,7 @@
             "key": "field_61ea7a992b202",
             "label": "Add links",
             "name": "",
+            "aria-label": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -23,6 +24,7 @@
             "key": "field_61ea7ae22b203",
             "label": "Link list",
             "name": "recommend_link_list",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -32,16 +34,20 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "field_61ea7afd2b204",
+            "acfe_repeater_stylised_button": 0,
+            "layout": "block",
+            "pagination": 0,
             "min": 0,
             "max": 20,
-            "layout": "table",
+            "collapsed": "field_61ea7afd2b204",
             "button_label": "Add new recommendation",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_61ea7afd2b204",
                     "label": "Label",
                     "name": "recommend_link_label",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 1,
@@ -55,27 +61,102 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_61ea7ae22b203"
                 },
                 {
                     "key": "field_61ea7b1c2b205",
                     "label": "Target",
                     "name": "recommend_link_target",
+                    "aria-label": "",
                     "type": "post_object",
                     "instructions": "",
                     "required": 1,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_673b050aa3c4c",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
-                        "width": "50",
+                        "width": "40",
                         "class": "",
                         "id": ""
                     },
                     "post_type": "",
+                    "post_status": "",
                     "taxonomy": "",
-                    "allow_null": 0,
-                    "multiple": 0,
                     "return_format": "id",
-                    "ui": 1
+                    "multiple": 0,
+                    "save_custom": 0,
+                    "save_post_status": "publish",
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
+                    "allow_null": 0,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": [],
+                    "save_post_type": "",
+                    "parent_repeater": "field_61ea7ae22b203"
+                },
+                {
+                    "key": "field_673b052aa3c4d",
+                    "label": "Target",
+                    "name": "recommend_link_target_external",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_673b050aa3c4c",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "https:\/\/",
+                    "parent_repeater": "field_61ea7ae22b203"
+                },
+                {
+                    "key": "field_673b050aa3c4c",
+                    "label": "External link",
+                    "name": "recommend_link_is_external",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_628b9314f8dee",
+                                "operator": "==",
+                                "value": "button"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "10",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Yes",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "parent_repeater": "field_61ea7ae22b203"
                 }
             ]
         },
@@ -83,6 +164,7 @@
             "key": "field_628b9314f8dee",
             "label": "Display as",
             "name": "template",
+            "aria-label": "",
             "type": "radio",
             "instructions": "",
             "required": 0,
@@ -107,6 +189,7 @@
             "key": "field_629078026dc49",
             "label": "Columns",
             "name": "recommend_columns",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -136,12 +219,15 @@
             "ui": 0,
             "return_format": "value",
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "allow_custom": 0,
+            "search_placeholder": ""
         },
         {
             "key": "field_61eab66ec9a8b",
             "label": "Max number of autosuggested recommendations",
             "name": "rekai_number_of_recommendation",
+            "aria-label": "",
             "type": "number",
             "instructions": "",
             "required": 0,
@@ -163,13 +249,14 @@
             "key": "field_628c958c693a9",
             "label": "RekAI",
             "name": "rekai",
+            "aria-label": "",
             "type": "group",
             "instructions": "Settings specific to RekAI.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
-                "class": "",
+                "class": "hidden",
                 "id": ""
             },
             "layout": "block",
@@ -178,6 +265,7 @@
                     "key": "field_628ca57c99f4b",
                     "label": "Filter from current page",
                     "name": "userootpath",
+                    "aria-label": "",
                     "type": "true_false",
                     "instructions": "Automatically filter recommendations based on the current url.",
                     "required": 0,
@@ -197,6 +285,7 @@
                     "key": "field_628ca7e268d09",
                     "label": "Url level",
                     "name": "rootpathlevel",
+                    "aria-label": "",
                     "type": "number",
                     "instructions": "Controls whether only pages below the current url path should be recommended from a certain level.",
                     "required": 0,
@@ -226,6 +315,7 @@
                     "key": "field_628c963a693aa",
                     "label": "Include pages",
                     "name": "subtree",
+                    "aria-label": "",
                     "type": "post_object",
                     "instructions": "Controls whether only pages under a particular branch of the site should be displayed. Leave blank to include all pages.",
                     "required": 0,
@@ -248,12 +338,17 @@
                     "allow_null": 0,
                     "multiple": 1,
                     "return_format": "object",
-                    "ui": 1
+                    "ui": 1,
+                    "bidirectional_target": [],
+                    "save_custom": 0,
+                    "save_post_type": "",
+                    "save_post_status": ""
                 },
                 {
                     "key": "field_628c96c84e43c",
                     "label": "Exclude pages",
                     "name": "excludetree",
+                    "aria-label": "",
                     "type": "post_object",
                     "instructions": "Controls whether certain pages should be excluded from viewing.",
                     "required": 0,
@@ -268,12 +363,17 @@
                     "allow_null": 0,
                     "multiple": 1,
                     "return_format": "object",
-                    "ui": 1
+                    "ui": 1,
+                    "bidirectional_target": [],
+                    "save_custom": 0,
+                    "save_post_type": "",
+                    "save_post_status": ""
                 },
                 {
                     "key": "field_628b4e43953e8",
                     "label": "Advanced options",
                     "name": "advanced_options",
+                    "aria-label": "",
                     "type": "textarea",
                     "instructions": "Add custom options in valid JSON format.",
                     "required": 0,
@@ -287,9 +387,15 @@
                     "placeholder": "{ \"key\": \"value\" }",
                     "maxlength": "",
                     "rows": "",
-                    "new_lines": ""
+                    "new_lines": "",
+                    "acfe_textarea_code": 0
                 }
-            ]
+            ],
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         }
     ],
     "location": [
@@ -315,6 +421,12 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": ""
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": "",
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": ""
 }]
 

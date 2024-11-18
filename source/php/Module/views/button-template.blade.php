@@ -2,9 +2,10 @@
       @if($recommendLinkList)
             @foreach($recommendLinkList as $recommendLink)
                 @include('partials.button', [
-                    "text" => $recommendLink->recommendLinkLabel,
-                    "href" => $recommendLink->recommendTarget,
-                    "type" => "static",
+                    "text"     => $recommendLink->recommendLinkLabel,
+                    "href"     => $recommendLink->recommendTarget,
+                    "type"     => "static",
+                    "external" => $recommendLink->recommendIsExternal,
                 ])
             @endforeach
       @endif
