@@ -10,8 +10,5 @@
         'recommend-linklist__' . $type . '-item',
         'c-button--pill',
     ],
-    'target' => $external ? '_blank' : null,
-    'icon' => $external ? 'open_in_new' : null,
-    'ariaLabel' => $external ? sprintf($lang->openInNew, $text) : null,
 ])
 @endbutton

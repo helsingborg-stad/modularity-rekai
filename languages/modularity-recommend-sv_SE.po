@@ -191,11 +191,6 @@ msgstr ""
 msgid "Loading content"
 msgstr "Laddar innehåll"
 
-#: source/php/Module/Recommend.php:61
-#, php-format
-msgid "Open link %s in new window/tab"
-msgstr "Öppna länken %s i nytt fönster eller ny flik"
-
 #. Plugin Name of the plugin/theme
 msgid "Modularity Recommend"
 msgstr "Modularity Rekommenderat"

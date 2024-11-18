@@ -57,10 +57,6 @@ class Recommend extends \Modularity\Module
                 "Loading content",
                 'modularity-recommend'
             ),
-            'openInNew' => __(
-                "Open link %s in new window/tab",
-                'modularity-recommend'
-            ),
         );
 
         //Get permalink, reformat to object
