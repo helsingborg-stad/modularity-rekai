@@ -57,12 +57,19 @@ class Recommend extends \Modularity\Module
                 "Loading content",
                 'modularity-recommend'
             ),
+            'openInNew' => __(
+                "Open link %s in new window/tab",
+                'modularity-recommend'
+            ),
         );
 
         //Get permalink, reformat to object
         if (!empty($data['recommendLinkList'])) {
             $data['recommendLinkList'] = array_map(function ($item) {
-                $item['recommendTarget'] = get_permalink($item['recommendLinkTarget']);
+                $item['recommendIsExternal'] = $item['recommendLinkIsExternal'];
+                $item['recommendTarget'] = $item['recommendIsExternal']
+                    ? $item['recommendLinkTargetExternal']
+                    : get_permalink($item['recommendLinkTarget']);
                 $item['recommendExcerpt'] = get_the_excerpt($item['recommendLinkTarget']);
                 return (object) $item;
             }, $data['recommendLinkList']);
