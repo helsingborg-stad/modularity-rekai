@@ -10,7 +10,7 @@
 
 @include($template ? $template . '-template' : 'button-template')
 
-@if($enableRekAI)
+@if($enableRekAI && $rekaiNumberOfRecommendation > 0)
     <script>
         window.addEventListener("rekai.load", function() {
           function createTemplateItem(data, template) {
