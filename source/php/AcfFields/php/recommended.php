@@ -260,7 +260,7 @@
             'conditional_logic' => 0,
             'wrapper' => array(
                 'width' => '',
-                'class' => 'hidden',
+                'class' => '',
                 'id' => '',
             ),
             'layout' => 'block',
